@@ -1,20 +1,20 @@
-export const Plus = () => {
+export const plusCount = () => {
   return {
-    type: "PLUS",
+    type: "PLUS_COUNT",
     payload: 10
   };
 };
 
-export const Minus = () => {
+export const minusCount = () => {
   return {
-    type: "MINUS",
+    type: "MINUS_COUNT",
     payload: 10
   };
 };
 
-export const Zero = () => {
+export const resetCount = () => {
   return {
-    type: "ZERO",
-    payload: 0
+    type: "RESET_COUNT",
+    payload: 100
   };
 };
