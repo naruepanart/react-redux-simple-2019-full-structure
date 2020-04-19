@@ -1,11 +1,11 @@
-import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
-  PLUS_COUNT,
-  MINUS_COUNT,
-  RESET_COUNT,
-  FETCH_USERS
-} from "./redux/actions";
+  plus_count,
+  mimus_count,
+  reset_count,
+  fetch_users
+} from "./redux/actions/counter";
 
 const Counter = () => {
   const count = useSelector(state => state.count);
@@ -14,7 +14,7 @@ const Counter = () => {
 
   useEffect(() => {
     try {
-      dispatch(FETCH_USERS());
+      dispatch(fetch_users());
     } catch (error) {
       console.log(error);
     }
@@ -24,22 +24,22 @@ const Counter = () => {
   return (
     <div>
       <p>Count: {count}</p>
-      <button onClick={() => dispatch(PLUS_COUNT())}>PLUS </button>
-      <button onClick={() => dispatch(MINUS_COUNT())}>MINUS</button>
-      <button onClick={() => dispatch(RESET_COUNT())}>RESET</button>
+      <button onClick={() => dispatch(plus_count())}>PLUS </button>
+      <button onClick={() => dispatch(mimus_count())}>MINUS</button>
+      <button onClick={() => dispatch(reset_count())}>RESET</button>
 
       <br></br>
       <br></br>
 
       <p>FETCH_USERS</p>
-      {fetchUsers.map(users => {
+       {fetchUsers.map(users => {
         return (
           <div key={users.id}>
             id : {users.id} - name : {users.name} - city : {users.address.city}{" "}
             - phone : {users.phone}
           </div>
         );
-      })}
+      })} 
     </div>
   );
 };
@@ -47,7 +47,7 @@ const Counter = () => {
 const App = () => {
   return (
     <div className="App">
-      <h1>Simple React - Redux 2019</h1>
+      <h1>Simple React - Redux 2020</h1>
       <Counter />
     </div>
   );
