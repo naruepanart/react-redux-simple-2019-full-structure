@@ -5,7 +5,7 @@ import {
   mimus_count,
   reset_count,
   fetch_users
-} from "./redux/actions/counter";
+} from "./redux/ducks/counter";
 
 const Counter = () => {
   const count = useSelector(state => state.count);
